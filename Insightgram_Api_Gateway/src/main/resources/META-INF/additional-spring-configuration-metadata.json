@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "allowed.frontend.origin",
+    "type": "java.lang.String",
+    "description": "A description for 'allowed.frontend.origin'"
+  },
+  {
+    "name": "allowed.backend.origin",
+    "type": "java.lang.String",
+    "description": "A description for 'allowed.backend.origin'"
+  },
+  {
+    "name": "main.origin",
+    "type": "java.lang.String",
+    "description": "A description for 'main.origin'"
+  },
+  {
+    "name": "main.backend.origin",
+    "type": "java.lang.String",
+    "description": "A description for 'main.backend.origin'"
+  },
+  {
+    "name": "messaging.backend.origin",
+    "type": "java.lang.String",
+    "description": "A description for 'messaging.backend.origin'"
+  },
+  {
+    "name": "main.frontend.origin",
+    "type": "java.lang.String",
+    "description": "A description for 'main.frontend.origin'"
+  }
+]}

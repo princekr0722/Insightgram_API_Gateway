@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+        corsConfigurations:
+          '[/main-app/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allow-credentials: false
+          '[/chat-app/**, "/user/chat/**", /ws/**]':
+            allowedOrigins: "http://127.0.0.1:5501, http://localhost:8088, http://localhost:8089"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allow-credentials: true
+            
+      routes:
+      - id: INSIGHTGRAM-MAIN-BACKEND-SERVICE
+        uri: lb://INSIGHTGRAM-MAIN-BACKEND-SERVICE
+        predicates:
+        - Path=/main-app/**
+      
+      - id: INSIGHTGRAM-MESSAGING-SERVICE
+        uri: lb://INSIGHTGRAM-MESSAGING-SERVICE
+        predicates:
+        - Path=/chat-app/**, /user/chat/**
